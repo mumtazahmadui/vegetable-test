@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable()
 export class DataService {
 
-  public vegetableNameSource = new BehaviorSubject<any>('');
+  public vegetableSubject = new Subject<any>();
   constructor() { 
   }
 
   public setVegetableList(vegetable: any) {
     if (vegetable) {
-      this.vegetableNameSource.next(vegetable);
+      this.vegetableSubject.next(vegetable);
     }
    
   }
  
   public getVegetable(): Observable<any> {
-    return this.vegetableNameSource.asObservable();
+    return this.vegetableSubject.asObservable();
   }
 }

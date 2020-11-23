@@ -1,7 +1,7 @@
-
-<div class="form-group">
-  <form #searchForm="ngForm">
-    <input type="text" class="form-control" required name="searchTerm" ngModel 
-    placeholder="Enter Vegetable Name" autocomplete="off">
-  </form>
+<div class="form-container">
+  <div class="form-group">
+    <span class="searchbox-icon"><i class="fa fa-search pt-2"></i></span>
+    <input class="center-block fullwidth search" type="text" placeholder="Enter Vegetable Name" id="inputSearch"
+      (ngModelChange)="onFormChange($event)" [ngModel]="inputVal" />
+  </div>
 </div>
